@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "小算盤-陣列", "小算盤-陣列\小算盤-陣列.csproj", "{6464BE4C-A683-4EC1-A249-BBC7492CB1D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6464BE4C-A683-4EC1-A249-BBC7492CB1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6464BE4C-A683-4EC1-A249-BBC7492CB1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6464BE4C-A683-4EC1-A249-BBC7492CB1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6464BE4C-A683-4EC1-A249-BBC7492CB1D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
