@@ -1,4 +1,4 @@
-﻿namespace 小算盤_陣列
+﻿namespace calculator
 {
     partial class Form1
     {
@@ -289,6 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(242, 236);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnnegative);

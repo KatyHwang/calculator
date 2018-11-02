@@ -1,0 +1,13 @@
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\obj\Debug\calculator.Form1.resources
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\obj\Debug\小算盤_陣列.Properties.Resources.resources
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\obj\Debug\calculator.csproj.GenerateResource.cache
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\obj\Debug\calculator.csproj.CoreCompileInputs.cache
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\obj\Debug\小算盤-陣列.exe
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\obj\Debug\小算盤-陣列.pdb
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\bin\Debug\小算盤-陣列.exe.config
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\bin\Debug\小算盤-陣列.exe.manifest
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\bin\Debug\小算盤-陣列.application
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\bin\Debug\小算盤-陣列.exe
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\bin\Debug\小算盤-陣列.pdb
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\obj\Debug\小算盤-陣列.exe.manifest
+D:\SW\github\calculator\小算盤-陣列\小算盤-陣列\obj\Debug\小算盤-陣列.application

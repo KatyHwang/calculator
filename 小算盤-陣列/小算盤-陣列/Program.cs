@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 小算盤_陣列
+namespace calculator
 {
     static class Program
     {

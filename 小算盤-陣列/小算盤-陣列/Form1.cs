@@ -2,25 +2,25 @@
 using System.Collections.Generic; 
 using System.Windows.Forms;
 
-namespace 小算盤_陣列
+namespace calculator
 {
     public partial class Form1 : Form
     {
-      // int log = 0; //設定一個參數為0
+     
         public Form1()
         {
             InitializeComponent();
         }
-        //用兩個list寫,一個存數字一個存符號
-        /// <summary>
-        /// 符號List
-        /// </summary>
-        private List<string> namestring = new List<string>(); //Array轉list //放在全域變數裡面 //放符號
 
         /// <summary>
-        /// 數字List
+        /// Operator
         /// </summary>
-        private List<double> namestring2 = new List<double>();//數字
+        private List<string> OperatorList = new List<string>();
+
+        /// <summary>
+        /// number
+        /// </summary>
+        private List<double> numberList = new List<double>();
 
         private void btntotal_Click(object sender, EventArgs e)
         {
@@ -30,22 +30,22 @@ namespace 小算盤_陣列
             ////b[0] = '+'; b[1] = '-'; b[2] = '*'; b[3] = '/'; //取出符號存放在陣列 ,陣列從0開始算
             //string[] name = lablshow.Text.Split(b); //對暫存數字串的那格 做切割(Split) 把符號提出來分別放在陣列裡
             ////string[] name2 = textBox1.Text.Split(a); //對textbox字串做切割(Split) 把數字提出來分別放在陣列裡
-            //List<string> namestring2 = new List<string>(name); //Array轉list //放數字
+            //List<string> numberList = new List<string>(name); //Array轉list //放數字
             //if (log == 0)
             //{
 
             CheckNumber();
 
+            operation(numberList, OperatorList);  
 
-            operation(namestring2, namestring); //進入運算 參數位置要一樣
-            namestring.Clear();//清除符號
+            OperatorList.Clear(); 
 
-            if (namestring2.Count != 0)
+            if (numberList.Count != 0)
             {
-                lablshow.Text = namestring2[0].ToString(); //把運算完的數字(namestring2)放進labl顯示 //[0]正負號整數
-                textBox1.Text = namestring2[0].ToString();  //暫存上一個加總,ex.總值=7,下一個輸入2 = 7+2
+                lablshow.Text = numberList[0].ToString(); //把運算完的數字(numberList)放進labl顯示 //[0]正負號整數
+                textBox1.Text = numberList[0].ToString();  //暫存上一個加總,ex.總值=7,下一個輸入2 = 7+2
             }
-            namestring2.Clear();//清除數字
+            numberList.Clear();//清除數字
             lablshow.Text = ""; //對按下等於後殘留在上方的數字做清除
                                
         }
@@ -71,48 +71,48 @@ namespace 小算盤_陣列
 
         #region 四則運算
         //做運算//建立新的群組 為運算用(operation意思:運算)  //()裡面放參數
-        double c; //總和
+        double Total;  
         /// <summary>
         /// 四則運算
         /// <para>說明:第一個參數為數字LIST , 第二個參數為符號LIST</para>
         /// </summary>
-        /// <param name="namestring2"></param>
-        /// <param name="namestring"></param>
-        public void operation(List<double> namestring2, List<string> namestring)
+        /// <param name="numberList"></param>
+        /// <param name="OperatorList"></param>
+        public void operation(List<double> numberList, List<string> OperatorList)
         {
-            List<string> op = new List<string>(new string[] { "*", "/", "-", "+" });//建立新的list 放運算符號
-            foreach (string pp in op) //先乘除後加減
+            List<string> op = new List<string>(new string[] { "*", "/", "-", "+" }); 
+            foreach (string pp in op)  
             {
-                while (namestring.Contains(pp)) //找list裡面有沒有xx值,有的話進入迴圈
+                while (OperatorList.Contains(pp))  
                 {
-                    int o = namestring.IndexOf(pp);
-                    int oo = namestring.IndexOf(pp) + 1; //namestng2 數字
+                    int num1 = OperatorList.IndexOf(pp);
+                    int num2 = OperatorList.IndexOf(pp) + 1;  
 
-                    c = 0;
-                    double k = namestring2[o];//namestring符號
-                    double j = namestring2[oo];
+                    Total = 0;
+                    double k = numberList[num1]; 
+                    double j = numberList[num2];
                     if (pp == "*")
                     {
-                        c = k*j;
+                        Total = k*j;
                     }
                     else if (pp == "/")
                     {
-                        c = k/j;
+                        Total = k/j;
                     }
                     else if (pp == "-")
                     {
-                        c = k-j;
+                        Total = k-j;
                     }
                     else
 
                     {
-                        c = k+j;
+                        Total = k+j;
                     }
                     //清除計算過數值
-                    namestring2.RemoveAt(oo);
-                    namestring.RemoveAt(o);
-                    namestring2[o] = c;
-                    if (namestring.Contains(pp))
+                    numberList.RemoveAt(num2);
+                    OperatorList.RemoveAt(num1);
+                    numberList[num1] = Total;
+                    if (OperatorList.Contains(pp))
                     {
                         continue;//如有相同運算符號,則回while
                     }
@@ -128,9 +128,9 @@ namespace 小算盤_陣列
         /// 新增運算符號
         /// </summary>
         /// <param name="s"></param>
-        public void Add_substring(string s) //放變數接收值 
+        public void Add_substring(string s) 
         {
-            namestring.Add(s);//增加陣列內容(s)到list裡面  //放符號
+            OperatorList.Add(s); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace 小算盤_陣列
         /// <param name="s"></param>
         public void Add_number(double s) //放變數接收值
         {
-            namestring2.Add(s);//增加陣列內容(s)到list裡面  //放數字
+            numberList.Add(s);//增加陣列內容(s)到list裡面  //放數字
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace 小算盤_陣列
         private void CheckNumber()
         {
             double n;
-            if (double.TryParse(textBox1.Text, out n))//判斷字串是否為數字
+            if (double.TryParse(textBox1.Text, out n)) 
             {
                 Add_number(Convert.ToDouble(textBox1.Text));
                 lablshow.Text += textBox1.Text;
@@ -158,7 +158,7 @@ namespace 小算盤_陣列
         #endregion
 
        
-        private void button12_Click(object sender, EventArgs e)//運算按鍵
+        private void button12_Click(object sender, EventArgs e) 
         {
             //HACK:新增確認數字的方法
             CheckNumber();
@@ -167,15 +167,15 @@ namespace 小算盤_陣列
             textBox1.Text = ((Button)sender).Text; 
         }
    
-        private void CE_Click(object sender, EventArgs e)//清除所有值
+        private void CE_Click(object sender, EventArgs e) 
         {
             textBox1.Text = "";
             lablshow.Text = "";
-            namestring.Clear();
-            namestring2.Clear();
+            OperatorList.Clear();
+            numberList.Clear();
         }
 
-        private void dot_Click(object sender, EventArgs e) //小數點
+        private void dot_Click(object sender, EventArgs e) 
         {
             if (textBox1.Text.IndexOf(".") < 0)
             {
